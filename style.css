@@ -1,0 +1,78 @@
+body {
+    margin: unset;
+    overflow-x: hidden;
+}
+.full-screen-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr 300px;
+}
+
+.header,
+.footer {
+    background: aliceblue;
+}
+.main {
+    overflow-x: scroll;
+}
+.slider-wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 300%;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: 1fr 75%;
+    min-height: 100%;
+}
+.content {
+    align-self: center;
+    padding: 20px;
+}
+
+.image {
+    max-width: 100%;
+    background-image: url(https://picsum.photos/2000);
+    background-position: center center;
+    background-size: cover;
+}
+.slide:nth-child(2) .image {
+    max-width: 100%;
+    background-image: url(https://picsum.photos/2200);
+}
+.slide:nth-child(3) .image {
+    max-width: 100%;
+    background-image: url(https://picsum.photos/1800);
+}
+
+/* For every mobile devices which have the same design */
+
+/* @media (max-width: 1024px), (max-width: 1366px) and (pointer: coarse) {
+    .main {
+        overflow-x: hidden;
+    }
+    .slider-wrapper {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .slide {
+        min-height: 700px;
+    }
+} */
+
+/* If the Ipad pro has the same design as the desktop but below devices doesn't */
+@media (max-width: 940px),
+    (max-width: 1180px) and (orientation: landscape) and (pointer: coarse) {
+    .main {
+        overflow-x: hidden;
+    }
+    .slider-wrapper {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .slide {
+        min-height: 700px;
+    }
+}
